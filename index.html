@@ -44,46 +44,61 @@ function no(){
 step++;
 
 if(step==2){
+
 document.getElementById("question").innerHTML =
 "Are you sure? Maybe just send Hi on WhatsApp 9106031895 🙂";
 
 yesSize += 10;
 document.getElementById("yes").style.fontSize = yesSize+"px";
+
 }
 
 else if(step==3){
+
 document.getElementById("question").innerHTML =
 "Come on... it will make my day 😅";
 
 yesSize += 15;
 document.getElementById("yes").style.fontSize = yesSize+"px";
+
 }
 
 else if(step==4){
+
 document.getElementById("question").innerHTML =
 "Last chance 😄";
 
 yesSize += 20;
 document.getElementById("yes").style.fontSize = yesSize+"px";
 
-document.getElementById("no").onmouseover = move;
+let noBtn = document.getElementById("no");
+
+noBtn.onmouseover = move;   // desktop
+noBtn.ontouchstart = move;  // mobile
+noBtn.onclick = move;       // click
+
 }
 
 }
 
 function move(){
-let x=Math.random()*window.innerWidth;
-let y=Math.random()*window.innerHeight;
 
-let noBtn=document.getElementById("no");
+let x = Math.random()*(window.innerWidth-100);
+let y = Math.random()*(window.innerHeight-50);
+
+let noBtn = document.getElementById("no");
+
 noBtn.style.position="absolute";
-noBtn.style.left=x+"px";
-noBtn.style.top=y+"px";
+noBtn.style.left = x+"px";
+noBtn.style.top = y+"px";
+
 }
 
 function yes(){
+
 document.body.innerHTML =
 "<h1>Yeeee ❤️ I knew it.. you are such a gentle person...<br><br>Chalo abhi karo message please on WhatsApp: 9106031895</h1>";
+
 }
 
 </script>
